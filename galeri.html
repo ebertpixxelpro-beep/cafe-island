@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Galeri Foto | Coral Cafe Penida - Tropical Vibes & Ocean View</title>
+    <meta name="description" content="Lihat suasana Coral Cafe Penida. Galeri foto pemandangan laut Nusa Penida, sunset terbaik, dan hidangan tropis yang memanjakan mata dan lidah.">
+    <meta name="keywords" content="Coral Cafe Penida, Cafe Pantai Bali, Sunset Nusa Penida, Galeri Makanan Bali, Instagramable Cafe Bali">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#2D3A31">
+    
+    <meta property="og:type" content="restaurant.gallery">
+    <meta property="og:url" content="https://coralcafepenida.com/galeri.html">
+    <meta property="og:title" content="Momen Tropis di Coral Cafe Penida">
+    <meta property="og:description" content="Nikmati visual laut biru dan kopi terbaik di tebing Nusa Penida.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1544605166-5e4c636735e2?auto=format&fit=crop&w=1200&q=80">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="aset/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="aset/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="aset/apple-touch-icon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #2D3A31; /* Dark Green */
+            --accent-color: #E6D5B8; /* Sand/Beige */
+            --text-color: #1F2937;
+            --light-bg: #F3F4F6;
+            --white: #ffffff;
+            --transition: all 0.3s ease;
+        }
+
+        /* Reset & Base */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--light-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* --- NAVBAR (Persis Index) --- */
+        header {
+            background-color: var(--primary-color);
+            padding: 1rem 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            align-items: center; /* Memastikan vertikal align center */
+        }
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            opacity: 0.9;
+        }
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--accent-color);
+            opacity: 1;
+        }
+        /* Tombol CTA di Navbar */
+        .nav-links .cta-btn {
+            background-color: var(--accent-color);
+            color: var(--primary-color) !important;
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-weight: 600 !important;
+            opacity: 1;
+        }
+        .nav-links .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(230, 213, 184, 0.3);
+        }
+        
+        /* Mobile Menu Hamburger */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+        .bar {
+            width: 25px;
+            height: 3px;
+            background-color: var(--accent-color);
+            transition: var(--transition);
+        }
+
+        /* --- GALLERY PAGE STYLES --- */
+        .page-header {
+            text-align: center;
+            padding: 4rem 1rem 3rem;
+            background: linear-gradient(to bottom, #2D3A31 0%, #F3F4F6 100%);
+        }
+        .page-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+        }
+        .page-header p {
+            max-width: 600px;
+            margin: 0 auto;
+            color: rgba(255,255,255,0.9);
+            font-weight: 300;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 5% 4rem;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            aspect-ratio: 1 / 1;
+            background-color: #ddd; 
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(45, 58, 49, 0.8), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: flex;
+            align-items: flex-end;
+            padding: 1.5rem;
+        }
+
+        .gallery-item:hover .overlay {
+            opacity: 1;
+        }
+
+        .overlay-text {
+            color: var(--white);
+            font-size: 1.1rem;
+            font-weight: 500;
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 0.5px;
+        }
+
+        /* --- SECTION BARU: CTA WA (Sebelum Footer) --- */
+        .cta-section {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            padding: 4rem 5%;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .cta-container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        .cta-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .cta-section p {
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        .btn-wa-large {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: var(--primary-color);
+            color: var(--accent-color);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 1.1rem;
+        }
+        .btn-wa-large:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(45, 58, 49, 0.2);
+            background-color: #1a241e;
+        }
+        /* Pattern hiasan background */
+        .cta-bg-pattern {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            opacity: 0.1;
+            background-image: radial-gradient(#2D3A31 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        /* --- FOOTER & FAB --- */
+        footer { background-color: var(--primary); color: #fff; padding: 60px 5% 30px; border-radius: 50px 50px 0 0; }
+        .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+        .footer-col h3 { font-family: var(--font-heading); margin-bottom: 20px; color: var(--accent); }
+        .copyright { text-align: center; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; font-size: 0.9rem; opacity: 0.6; }
+
+        .fab-container { position: fixed; bottom: 30px; right: 30px; z-index: 990; display: flex; flex-direction: column; gap: 15px; }
+        .fab-btn {
+            width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            color: white; font-size: 1.4rem; box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: 0.3s;
+        }
+        /* --- FAB (Floating Action Buttons) --- */
+        .fab-container {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            display: flex;
+            flex-direction: column; /* Stack vertikal */
+            gap: 15px;
+            z-index: 2000;
+            align-items: center;
+        }
+
+        .fab-btn {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            border: none;
+            outline: none;
+        }
+
+        .fab-btn:hover {
+            transform: scale(1.1);
+        }
+
+        /* ORDER: Back to Top di ATAS, WA di BAWAH */
+        .fab-top {
+            order: 1; /* Urutan pertama (paling atas dalam stack) */
+            background-color: var(--white);
+            color: var(--primary-color);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px) scale(0.8);
+            width: 45px; /* Sedikit lebih kecil dari WA */
+            height: 45px;
+        }
+
+        .fab-top.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0) scale(1);
+        }
+
+        .fab-wa {
+            order: 2; /* Urutan kedua (paling bawah, dekat jempol) */
+            background-color: #25D366;
+            color: white;
+        }
+
+        .fab-icon {
+            width: 28px;
+            height: 28px;
+            fill: currentColor;
+        }
+        .fab-top .fab-icon { width: 24px; height: 24px; }
+
+        /* --- Lightbox --- */
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            background: rgba(45, 58, 49, 0.98);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 3000;
+            padding: 1rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .lightbox.active { display: flex; opacity: 1; }
+        .lightbox img {
+            max-width: 100%;
+            max-height: 90vh;
+            border-radius: 4px;
+            box-shadow: 0 0 30px rgba(0,0,0,0.5);
+            object-fit: contain;
+        }
+        .close-lightbox {
+            position: absolute;
+            top: 20px; right: 30px;
+            color: var(--white);
+            font-size: 3rem;
+            cursor: pointer;
+            line-height: 0.5;
+        }
+        .close-lightbox:hover { color: var(--accent-color); }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: absolute;
+                top: 70px; right: 0;
+                background-color: var(--primary-color);
+                width: 100%;
+                flex-direction: column;
+                align-items: center;
+                padding: 2rem 0;
+                transform: translateY(-150%);
+                transition: transform 0.4s ease;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            }
+            .nav-links.active { transform: translateY(0); }
+            .menu-toggle { display: flex; }
+            .menu-toggle.active .bar:nth-child(1) { transform: rotate(-45deg) translate(-5px, 6px); }
+            .menu-toggle.active .bar:nth-child(2) { opacity: 0; }
+            .menu-toggle.active .bar:nth-child(3) { transform: rotate(45deg) translate(-5px, -6px); }
+            
+            .page-header h1 { font-size: 2.2rem; }
+            .fab-container { bottom: 20px; right: 20px; }
+            
+            .cta-section h2 { font-size: 2rem; }
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ImageGallery",
+      "name": "Galeri Coral Cafe Penida",
+      "description": "Koleksi foto suasana cafe tropis di Nusa Penida, hidangan lokal, dan pemandangan laut.",
+      "author": {
+        "@type": "Restaurant",
+        "name": "Coral Cafe Penida"
+      }
+    }
+    </script>
+</head>
+<body>
+
+    <header>
+    <nav class="navbar">
+        <div class="logo">CORAL CAFE.</div>
+        
+<button class="menu-toggle" id="mobile-menu" aria-label="Buka Menu Navigasi">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+</button>
+
+        <ul class="nav-links">
+            <li><a href="index.html" onclick="toggleMenu()">Home</a></li>
+            <li><a href="abot.html" onclick="toggleMenu()">About</a></li>
+            <li><a href="peket.html" onclick="toggleMenu()">Menu</a></li>
+            <li><a href="galeri.html" onclick="toggleMenu()">Galeri</a></li>
+            <li><a href="blog.html" onclick="toggleMenu()">Blog</a></li>
+        </ul>
+    </nav>
+
+    </header>
+
+    <div class="page-header">
+        <h1>Island Vibes & Moments</h1>
+        <p>Rekaman visual dari sudut-sudut tropis kami. Dimana kopi bertemu dengan deburan ombak Nusa Penida.</p>
+    </div>
+
+    <main>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1573801265636-f334d70081d5?auto=format&fit=crop&w=600&q=80" 
+                     alt="Pemandangan laut biru dari Coral Cafe Penida" width="600" height="600" fetchpriority="high">
+                <div class="overlay"><span class="overlay-text">Ocean View</span></div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=600&q=80" 
+                     alt="Interior cafe tropis yang nyaman di Bali" width="600" height="600" loading="lazy">
+                <div class="overlay"><span class="overlay-text">Cozy Interior</span></div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?auto=format&fit=crop&w=600&q=80" 
+                     alt="Kopi Artisan Bali dengan latte art" width="600" height="600" loading="lazy">
+                <div class="overlay"><span class="overlay-text">Barista's Art</span></div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1544605166-5e4c636735e2?auto=format&fit=crop&w=600&q=80" 
+                     alt="Smoothie bowl buah segar tropis" width="600" height="600" loading="lazy">
+                <div class="overlay"><span class="overlay-text">Tropical Taste</span></div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1621689728362-7e9b11d86016?auto=format&fit=crop&w=600&q=80" 
+                     alt="Suasana cafe saat matahari terbenam" width="600" height="600" loading="lazy">
+                <div class="overlay"><span class="overlay-text">Sunset Hour</span></div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=600&q=80" 
+                     alt="Area outdoor seating pinggir pantai" width="600" height="600" loading="lazy">
+                <div class="overlay"><span class="overlay-text">Outdoor Vibes</span></div>
+            </div>
+        </div>
+    </main>
+
+    <section class="cta-section">
+        <div class="cta-bg-pattern"></div>
+        <div class="cta-container">
+            <h2>Rencanakan Kunjungan Anda</h2>
+            <p>Amankan tempat terbaik untuk menikmati sunset hari ini. Hubungi kami langsung untuk reservasi meja atau acara spesial.</p>
+            <a href="https://wa.me/6281234567890?text=Halo%20Coral%20Cafe,%20saya%20ingin%20reservasi" target="_blank" class="btn-wa-large">
+                <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                Chat WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <div class="fab-container">
+        <button onclick="backToTop()" 
+                id="topBtn" 
+                class="fab-btn fab-top" 
+                aria-label="Kembali ke Atas">
+            <svg class="fab-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 4l-8 8h6v8h4v-8h6z"/>
+            </svg>
+        </button>
+
+        <a href="https://wa.me/6281234567890" 
+           class="fab-btn fab-wa" 
+           target="_blank" 
+           aria-label="Chat WhatsApp">
+            <svg class="fab-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+            </svg>
+        </a>
+    </div>
+
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
+        <span class="close-lightbox">&times;</span>
+        <img src="" alt="Gambar Diperbesar">
+    </div>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="logo" style="color: #fff; margin-bottom: 20px;">CORAL CAFE.</div>
+                <p>Menyajikan kehangatan pulau dewata dalam setiap hidangan dengan sentuhan alam yang menenangkan.</p>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Navigasi</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="abot.html">Tentang Kami</a></li>
+                    <li><a href="peket.html">Menu</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3>Hubungi Kami</h3>
+                <ul>
+                    <li>📍 Jalan Raya Nusa Penida, Bali</li>
+                    <li>📞 <a href="tel:+6281234567890">+62 812 3456 7890</a></li>
+                    <li>✉️ <a href="mailto:hello@coralcafepenida.com">hello@coralcafepenida.com</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Ikuti Kami</h3>
+                <ul>
+                    <li><a href="#" aria-label="Instagram">Instagram</a></li>
+                    <li><a href="#" aria-label="TikTok">TikTok</a></li>
+                    <li><a href="#" aria-label="Facebook">Facebook</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="copyright">
+            &copy; 2024 Coral Cafe Penida. All Rights Reserved. Designed with Love.
+        </div>
+    </footer>
+
+
+    <script>
+        // 1. Mobile Menu
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+
+        // 2. FAB Scroll Logic
+        const topBtn = document.getElementById("topBtn");
+        window.addEventListener('scroll', () => {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                topBtn.classList.add("show");
+            } else {
+                topBtn.classList.remove("show");
+            }
+        }, { passive: true });
+
+        function backToTop() {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+
+        // 3. Lightbox Logic
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = lightbox.querySelector('img');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        const closeLightbox = document.querySelector('.close-lightbox');
+
+        galleryItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const imgElement = item.querySelector('img');
+                lightboxImg.src = imgElement.src;
+                lightboxImg.alt = imgElement.alt;
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden'; 
+            });
+        });
+
+        const closeGallery = () => {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto'; 
+        };
+
+        closeLightbox.addEventListener('click', closeGallery);
+        lightbox.addEventListener('click', (e) => {
+            if(e.target === lightbox) closeGallery();
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeGallery();
+        });
+    </script>
+</body>
+</html>

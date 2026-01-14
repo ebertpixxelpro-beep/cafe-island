@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Menu | Coral Cafe Penida</title>
+    <meta name="description" content="Menu lengkap Coral Cafe Penida. Kopi, Tropical Bowl, dan Makanan Khas Bali.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#2D3A31">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Menu",
+      "name": "Coral Cafe Menu",
+      "inLanguage": "id"
+    }
+    </script>
+
+    <style>
+        /* --- CSS VARIABLES --- */
+        :root{
+            --bg-body:#F9F8F4; --bg-card:#FFFFFF;
+            --text-main:#2D3A31; --text-muted:#5C6B61;
+            --primary:#2D3A31; --accent:#8C9A84;
+            --highlight:#C27B66; --highlight-hover:#A86550;
+            --border:#E6E2DA;
+            --font-heading:'Playfair Display',serif;
+            --font-body:'Source Sans 3',sans-serif;
+            --radius-card:24px; --radius-pill:999px;
+            --shadow-soft:0 10px 30px -5px rgba(45,58,49,0.05);
+            --transition:all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            --container: 1200px;
+        }
+
+        /* Reset & Base */
+        *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+        html { scroll-behavior:smooth; }
+        body { font-family:var(--font-body); color:var(--text-main); background-color:var(--bg-body); line-height:1.6; font-size:16px; overflow-x:hidden; }
+        a { text-decoration:none; color:inherit; transition:var(--transition); }
+        ul { list-style:none; }
+        img { max-width:100%; height:auto; display:block; }
+        button { font-family: inherit; cursor: pointer; border: none; outline: none; background: none; }
+        
+        /* Typography */
+        h1,h2,h3,h4 { font-family:var(--font-heading); font-weight:700; color:var(--primary); line-height: 1.2; }
+        
+        /* Layout */
+        .container { max-width: var(--container); margin: 0 auto; padding: 0 20px; }
+
+        /* --- NAVBAR --- */
+        .navbar {
+            display:flex; justify-content:space-between; align-items:center;
+            padding:20px 5%; background-color:rgba(249,248,244,0.98);
+            position:sticky; top:0; z-index:100;
+            border-bottom:1px solid rgba(0,0,0,0.05); backdrop-filter: blur(10px);
+        }
+        .logo { font-family:var(--font-heading); font-size:1.75rem; color:var(--primary); font-weight:700; }
+        .nav-links { display:flex; gap:40px; align-items: center; }
+        .nav-links a { font-weight:500; font-size:0.95rem; color:var(--text-main); position:relative; }
+        .nav-links a:hover, .nav-links a.active { color:var(--highlight); }
+        
+        .cart-btn-wrap { position: relative; display: flex; align-items: center; }
+        .cart-icon { font-size: 1.2rem; color: var(--primary); transition: var(--transition); }
+        .cart-badge {
+            position: absolute; top: -8px; right: -10px;
+            background: var(--highlight); color: white;
+            font-size: 0.7rem; font-weight: 700;
+            width: 18px; height: 18px; border-radius: 50%;
+            display: none; place-items: center; justify-content: center;
+        }
+
+        /* Mobile Menu */
+        .menu-toggle { display: none; flex-direction: column; gap: 6px; cursor: pointer; z-index: 102; }
+        .bar { width:25px; height:2px; background:var(--text-main); transition:0.3s; }
+        .menu-toggle.active .bar:nth-child(1) { transform: rotate(-45deg) translate(-5px, 6px); }
+        .menu-toggle.active .bar:nth-child(2) { opacity: 0; }
+        .menu-toggle.active .bar:nth-child(3) { transform: rotate(45deg) translate(-5px, -6px); }
+
+        /* --- HERO --- */
+        .hero-menu {
+            height: 45vh; min-height: 350px;
+            background: linear-gradient(rgba(45,58,49,0.3), rgba(45,58,49,0.5)), url('https://images.unsplash.com/photo-1596131460330-804d9c74563a?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover; background-position: center;
+            display: flex; align-items: center; justify-content: center;
+            text-align: center; color: white; border-radius: 0 0 50px 50px; margin-bottom: 40px;
+        }
+        .hero-menu h1 { font-size: 3.5rem; color: white; margin-bottom: 15px; }
+        .hero-menu p { font-size: 1.1rem; opacity: 0.9; max-width: 600px; margin: 0 auto; font-style: italic; }
+
+        /* --- SECTION: CARA MEMESAN (NEW) --- */
+        .steps-section { margin-bottom: 60px; text-align: center; }
+        .steps-title { margin-bottom: 40px; }
+        .steps-title h2 { font-size: 2rem; margin-bottom: 10px; }
+        
+        .steps-grid { 
+            display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; 
+            background: white; padding: 40px 20px; border-radius: var(--radius-card);
+            border: 1px solid var(--border); box-shadow: var(--shadow-soft);
+        }
+        .step-item { position: relative; display: flex; flex-direction: column; align-items: center; gap: 15px; }
+        .step-icon {
+            width: 60px; height: 60px; background: var(--bg-body); color: var(--highlight);
+            border-radius: 50%; display: grid; place-items: center; font-size: 1.5rem;
+            border: 1px solid var(--border); transition: var(--transition);
+        }
+        .step-item:hover .step-icon { background: var(--highlight); color: white; transform: scale(1.1); }
+        .step-text h4 { font-size: 1.1rem; margin-bottom: 5px; }
+        .step-text p { font-size: 0.9rem; color: var(--text-muted); }
+
+        /* Arrow Connector (Desktop only) */
+        .step-item:not(:last-child)::after {
+            content: '\f061'; font-family: "Font Awesome 6 Free"; font-weight: 900;
+            position: absolute; right: -20px; top: 25px; color: var(--border); font-size: 1rem;
+        }
+
+        /* --- MENU TABS & GRID --- */
+        .tabs-wrap { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; margin-bottom: 40px; }
+        .tab-btn {
+            background: transparent; border: 1px solid var(--border); color: var(--text-muted);
+            padding: 10px 24px; border-radius: var(--radius-pill); cursor: pointer;
+            font-family: var(--font-body); font-weight: 600; transition: var(--transition);
+        }
+        .tab-btn:hover, .tab-btn.active {
+            background: var(--primary); border-color: var(--primary); color: white;
+        }
+
+        .menu-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px; margin-bottom: 80px; }
+        .menu-card {
+            background: var(--bg-card); border-radius: var(--radius-card); overflow: hidden;
+            box-shadow: var(--shadow-soft); transition: var(--transition); border: 1px solid var(--border);
+            display: flex; flex-direction: column;
+        }
+        .menu-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); border-color: var(--highlight); }
+        
+        .card-img-wrap { position: relative; height: 200px; overflow: hidden; }
+        .menu-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+        .menu-card:hover .menu-img { transform: scale(1.05); }
+        .cat-tag {
+            position: absolute; top: 12px; left: 12px;
+            background: rgba(255,255,255,0.9); color: var(--primary);
+            font-size: 0.7rem; padding: 4px 10px; border-radius: 99px;
+            font-weight: 700; text-transform: uppercase;
+        }
+
+        .card-body { padding: 20px; display: flex; flex-direction: column; flex: 1; }
+        .card-head { display: flex; justify-content: space-between; margin-bottom: 8px; }
+        .menu-name { font-size: 1.2rem; }
+        .menu-price { font-weight: 700; color: var(--highlight); }
+        .menu-desc { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 20px; flex: 1; }
+        
+        .btn-order {
+            width: 100%; padding: 10px; border: 1px solid var(--primary); background: transparent;
+            color: var(--primary); border-radius: 99px; font-weight: 600; 
+            text-transform: uppercase; font-size: 0.85rem; transition: var(--transition);
+        }
+        .btn-order:hover { background: var(--primary); color: white; }
+
+        /* --- FOOTER & FAB --- */
+        footer { background-color: var(--primary); color: #fff; padding: 60px 5% 30px; border-radius: 50px 50px 0 0; }
+        .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+        .footer-col h3 { font-family: var(--font-heading); margin-bottom: 20px; color: var(--accent); }
+        .copyright { text-align: center; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; font-size: 0.9rem; opacity: 0.6; }
+
+        .fab-container { position: fixed; bottom: 30px; right: 30px; z-index: 990; display: flex; flex-direction: column; gap: 15px; }
+        .fab-btn {
+            width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            color: white; font-size: 1.4rem; box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: 0.3s;
+        }
+        .fab-btn:hover { transform: scale(1.1); }
+        .fab-wa { background: #25D366; }
+        .fab-top { background: var(--highlight); opacity: 0; pointer-events: none; }
+        .fab-top.show { opacity: 1; pointer-events: auto; }
+
+        /* --- MODAL --- */
+        .modal-overlay {
+            position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 1000;
+            display: flex; justify-content: center; align-items: center; padding: 20px;
+            opacity: 0; pointer-events: none; transition: 0.3s;
+        }
+        .modal-overlay.open { opacity: 1; pointer-events: auto; }
+        .modal-box {
+            background: white; width: 100%; max-width: 800px; max-height: 90vh;
+            border-radius: 20px; display: flex; flex-direction: column; overflow: hidden;
+            transform: translateY(20px); transition: 0.3s;
+        }
+        .modal-overlay.open .modal-box { transform: translateY(0); }
+        .modal-header { padding: 20px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+        .modal-body { padding: 20px; overflow-y: auto; display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+        
+        .form-group { margin-bottom: 15px; }
+        input, select, textarea { width: 100%; padding: 10px; border: 1px solid var(--border); border-radius: 8px; margin-top: 5px; font-family: inherit; }
+        
+        .cart-summary { background: #F7F5F0; padding: 20px; border-radius: 12px; }
+        .btn-submit { width: 100%; padding: 12px; background: var(--highlight); color: white; border-radius: 99px; margin-top: 20px; font-weight: 700; transition:0.3s; }
+        .btn-submit:hover { background: var(--highlight-hover); }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .nav-links { position: fixed; top: 0; right: -100%; width: 100%; height: 100vh; background: var(--bg-body); flex-direction: column; justify-content: center; transition: 0.4s; z-index: 99; }
+            .nav-links.active { right: 0; }
+            .menu-toggle { display: flex; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .modal-body { grid-template-columns: 1fr; }
+            
+            .steps-grid { grid-template-columns: 1fr; text-align: left; padding: 20px; gap: 30px; }
+            .step-item { flex-direction: row; align-items: center; }
+            .step-item:not(:last-child)::after { content: ''; border-left: 2px dashed var(--border); height: 20px; left: 30px; top: 60px; right: auto; }
+            .step-icon { width: 50px; height: 50px; font-size: 1.2rem; flex-shrink: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">CORAL CAFE.</div>
+        <div class="menu-toggle" id="mobile-menu"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
+        <ul class="nav-links">
+            <li><a href="index.html" onclick="toggleMenu()">Home</a></li>
+            <li><a href="abot.html" onclick="toggleMenu()">About</a></li>
+            <li><a href="peket.html" onclick="toggleMenu()">Menu</a></li>
+            <li><a href="galeri.html" onclick="toggleMenu()">Galeri</a></li>
+            <li><a href="blog.html" onclick="toggleMenu()">Blog</a></li>
+            <li class="cart-btn-wrap" onclick="openModal()">
+                <i class="fas fa-shopping-basket cart-icon"></i>
+                <span class="cart-badge" id="cartBadge">0</span>
+            </li>
+        </ul>
+    </nav>
+
+    <header class="hero-menu">
+        <div class="hero-content">
+            <h1>Our Collection</h1>
+            <p>Tropical vibes and local tastes from Nusa Penida.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        
+        <section class="steps-section">
+            <div class="steps-title">
+                <h2>Cara Memesan</h2>
+                <p style="color:var(--text-muted)">Nikmati hidangan kami dengan 4 langkah mudah</p>
+            </div>
+            
+            <div class="steps-grid">
+                <div class="step-item">
+                    <div class="step-icon"><i class="fas fa-list-ul"></i></div>
+                    <div class="step-text">
+                        <h4>1. Pilih Menu</h4>
+                        <p>Cari makanan favorit Anda di daftar menu bawah.</p>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-icon"><i class="fas fa-cart-plus"></i></div>
+                    <div class="step-text">
+                        <h4>2. Masuk Keranjang</h4>
+                        <p>Klik tombol "Tambah" untuk memasukkan pesanan.</p>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-icon"><i class="fab fa-whatsapp"></i></div>
+                    <div class="step-text">
+                        <h4>3. Kirim Order</h4>
+                        <p>Klik icon keranjang & kirim format pesanan ke WhatsApp.</p>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-icon"><i class="fas fa-utensils"></i></div>
+                    <div class="step-text">
+                        <h4>4. Nikmati</h4>
+                        <p>Lakukan pembayaran dan tunggu pesanan diantar.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="tabs-wrap" id="categoryTabs">
+            <button class="tab-btn active" data-cat="all">Semua</button>
+            <button class="tab-btn" data-cat="coffee">Coffee</button>
+            <button class="tab-btn" data-cat="tropical">Tropical</button>
+            <button class="tab-btn" data-cat="food">Makanan</button>
+        </section>
+
+        <section class="menu-grid" id="menuGrid"></section>
+
+    </main>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="logo" style="color: #fff; margin-bottom: 20px;">CORAL CAFE.</div>
+                <p>Menyajikan kehangatan pulau dewata dalam setiap hidangan dengan sentuhan alam yang menenangkan.</p>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Navigasi</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="abot.html">Tentang Kami</a></li>
+                    <li><a href="peket.html">Menu</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3>Hubungi Kami</h3>
+                <ul>
+                    <li>📍 Jalan Raya Nusa Penida, Bali</li>
+                    <li>📞 <a href="tel:+6281234567890">+62 812 3456 7890</a></li>
+                    <li>✉️ <a href="mailto:hello@coralcafepenida.com">hello@coralcafepenida.com</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Ikuti Kami</h3>
+                <ul>
+                    <li><a href="#" aria-label="Instagram">Instagram</a></li>
+                    <li><a href="#" aria-label="TikTok">TikTok</a></li>
+                    <li><a href="#" aria-label="Facebook">Facebook</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="copyright">
+            &copy; 2024 Coral Cafe Penida. All Rights Reserved. Designed with Love.
+        </div>
+    </footer>
+
+    <div class="fab-container">
+        <button class="fab-btn fab-top" id="btnTop" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        <a href="https://wa.me/6281234567890" target="_blank" class="fab-btn fab-wa">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <div class="modal-overlay" id="checkoutModal">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h3>Konfirmasi Pesanan</h3>
+                <button onclick="closeModal()" style="font-size:1.5rem">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <div class="form-group"><label>Nama</label><input type="text" id="custName"></div>
+                    <div class="form-group">
+                        <label>Tipe</label>
+                        <select id="orderType" onchange="toggleAddr()">
+                            <option value="Dine In">Dine-in</option>
+                            <option value="Delivery">Delivery</option>
+                        </select>
+                    </div>
+                    <div class="form-group" id="addressGroup" style="display:none"><label>Alamat</label><textarea id="custAddress"></textarea></div>
+                    <div class="form-group"><label>Catatan</label><textarea id="custNote"></textarea></div>
+                    <div class="form-group">
+                        <label>Bayar</label>
+                        <select id="paymentMethod"><option value="Cash">Tunai</option><option value="QRIS">QRIS</option></select>
+                    </div>
+                </div>
+                <div class="cart-summary">
+                    <h4>Ringkasan</h4>
+                    <div id="cartItemsList"></div>
+                    <div style="margin-top:20px; font-weight:bold; font-size:1.2rem; color:var(--primary)">
+                        Total: <span id="summaryTotal">Rp 0</span>
+                    </div>
+                    <button class="btn-submit" onclick="sendToWhatsApp()">Pesan via WhatsApp</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        /* ================================================================
+           🛠️ AREA EDIT MENU (GANTI GAMBAR & DATA DI SINI) 🛠️
+           ================================================================
+           Cara ganti gambar:
+           1. Cari "img": "..."
+           2. Ganti link di dalamnya dengan link gambar kamu.
+           3. Bisa pakai link internet (https://...) atau file lokal (aset/gambar.jpg)
+        */
+
+        const MENU_ITEMS = [
+            { 
+                id: 1, 
+                name: "Coconut Paradise", 
+                cat: "tropical", 
+                price: 25000, 
+                img: "aset/eskelapamuda (1).webp", // GANTI LINK INI
+                desc: "Kelapa muda utuh segar." 
+            },
+            { 
+                id: 2, 
+                name: "Dragon Bowl", 
+                cat: "tropical", 
+                price: 45000, 
+                img: "https://images.unsplash.com/photo-1582218497330-22c9e7828452?w=400&q=80", // GANTI LINK INI
+                desc: "Smoothie buah naga & granola." 
+            },
+            { 
+                id: 3, 
+                name: "Kintamani V60", 
+                cat: "coffee", 
+                price: 30000, 
+                img: "https://images.unsplash.com/photo-1497935586351-b67a49e012bf?w=400&q=80", // GANTI LINK INI
+                desc: "Manual brew asli Bali." 
+            },
+            { 
+                id: 4, 
+                name: "Es Kopi Gula Aren", 
+                cat: "coffee", 
+                price: 28000, 
+                img: "file:///C:/island%20cafe/aset/BebekBetutu%20(1).webp", // GANTI LINK INI
+                desc: "Kopi susu gula aren organik." 
+            },
+            { 
+                id: 5, 
+                name: "Nasi Campur Bali", 
+                cat: "food", 
+                price: 55000, 
+                img: "https://images.unsplash.com/photo-1626082896492-766af4eb6501?w=400&q=80", // GANTI LINK INI
+                desc: "Ayam betutu, sate lilit, lawar." 
+            },
+            { 
+                id: 6, 
+                name: "Chicken Satay", 
+                cat: "food", 
+                price: 40000, 
+                img: "https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?w=400&q=80", // GANTI LINK INI
+                desc: "Sate ayam bumbu kacang." 
+            }
+        ];
+
+        /* ================================================================
+           ⛔ JANGAN UBAH KODE DI BAWAH INI KECUALI PAHAM JAVASCRIPT ⛔
+           ================================================================ */
+        
+        let cart = {}; let currentCat = 'all';
+        const rupiah = (n) => new Intl.NumberFormat("id-ID", { style: "currency", currency: "IDR", maximumFractionDigits: 0 }).format(n);
+
+        function renderMenu() {
+            const grid = document.getElementById('menuGrid');
+            const filtered = currentCat === 'all' ? MENU_ITEMS : MENU_ITEMS.filter(i => i.cat === currentCat);
+            grid.innerHTML = filtered.map(item => `
+                <article class="menu-card">
+                    <div class="card-img-wrap">
+                        <img src="${item.img}" alt="${item.name}" class="menu-img" loading="lazy">
+                        <span class="cat-tag">${item.cat}</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-head">
+                            <h4 class="menu-name">${item.name}</h4>
+                            <span class="menu-price">${rupiah(item.price)}</span>
+                        </div>
+                        <p class="menu-desc">${item.desc}</p>
+                        <button class="btn-order" onclick="addToCart(${item.id})">Tambah</button>
+                    </div>
+                </article>
+            `).join('');
+        }
+
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                e.target.classList.add('active');
+                currentCat = e.target.dataset.cat;
+                renderMenu();
+            });
+        });
+
+        function addToCart(id) {
+            cart[id] = (cart[id] || 0) + 1;
+            updateUI();
+        }
+        function updateCartItem(id, chg) {
+            if(cart[id]) cart[id] += chg;
+            if(cart[id] <= 0) delete cart[id];
+            updateUI();
+        }
+        function updateUI() {
+            const total = Object.values(cart).reduce((a,b)=>a+b,0);
+            const badge = document.getElementById('cartBadge');
+            badge.innerText = total; badge.style.display = total > 0 ? 'grid' : 'none';
+            if(document.getElementById('checkoutModal').classList.contains('open')) renderCartModal();
+        }
+
+        function openModal() {
+            if(Object.keys(cart).length === 0) return alert("Keranjang kosong!");
+            document.getElementById('checkoutModal').classList.add('open');
+            renderCartModal();
+        }
+        function closeModal() { document.getElementById('checkoutModal').classList.remove('open'); }
+        function toggleAddr() {
+            document.getElementById('addressGroup').style.display = document.getElementById('orderType').value === 'Delivery' ? 'block' : 'none';
+        }
+
+        function renderCartModal() {
+            const list = document.getElementById('cartItemsList');
+            let sub = 0;
+            list.innerHTML = Object.keys(cart).map(id => {
+                const item = MENU_ITEMS.find(i => i.id == id);
+                sub += item.price * cart[id];
+                return `<div style="display:flex; justify-content:space-between; margin-bottom:10px; border-bottom:1px dashed #ccc; padding-bottom:5px;">
+                    <div><b>${item.name}</b><br><small>${rupiah(item.price)} x ${cart[id]}</small></div>
+                    <div>
+                        <button onclick="updateCartItem(${id},-1)">-</button> 
+                        <span style="margin:0 5px">${cart[id]}</span> 
+                        <button onclick="updateCartItem(${id},1)">+</button>
+                    </div>
+                </div>`;
+            }).join('');
+            document.getElementById('summaryTotal').innerText = rupiah(sub * 1.1); // +Tax 10%
+        }
+
+        function sendToWhatsApp() {
+            const name = document.getElementById('custName').value;
+            if(!name) return alert("Isi nama dulu!");
+            
+            let msg = `Halo Coral Cafe, Pesanan Baru:\nNama: ${name}\nTipe: ${document.getElementById('orderType').value}\n`;
+            if(document.getElementById('orderType').value === 'Delivery') msg += `Alamat: ${document.getElementById('custAddress').value}\n`;
+            msg += `Catatan: ${document.getElementById('custNote').value}\n\nMENU:\n`;
+            
+            let sub = 0;
+            Object.keys(cart).forEach(id => {
+                const item = MENU_ITEMS.find(i => i.id == id);
+                sub += item.price * cart[id];
+                msg += `- ${item.name} (${cart[id]}x)\n`;
+            });
+            msg += `\nTotal (+Tax): ${rupiah(sub * 1.1)}`;
+            window.open(`https://wa.me/6281234567890?text=${encodeURIComponent(msg)}`, '_blank');
+        }
+
+        // Mobile Menu & Scroll
+        document.getElementById('mobile-menu').onclick = () => {
+            document.querySelector('.nav-links').classList.toggle('active');
+            document.getElementById('mobile-menu').classList.toggle('active');
+        };
+        window.onscroll = () => {
+            const btn = document.getElementById('btnTop');
+            window.scrollY > 300 ? btn.classList.add('show') : btn.classList.remove('show');
+        };
+
+        renderMenu();
+    </script>
+</body>
+</html>
