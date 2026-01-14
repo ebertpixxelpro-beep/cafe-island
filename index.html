@@ -380,20 +380,19 @@
     const mobileMenu = document.getElementById('mobile-menu');
     const navLinks = document.querySelector('.nav-links');
 
+    // 1. Fungsi Buka/Tutup Menu saat tombol Hamburger diklik
     mobileMenu.addEventListener('click', () => {
-        // 1. Toggle class 'active' untuk memunculkan menu navigasi
         navLinks.classList.toggle('active');
-        
-        // 2. Toggle class 'active' JUGA untuk tombol itu sendiri (agar CSS di atas bekerja)
         mobileMenu.classList.toggle('active');
     });
 
-    // Fungsi agar menu tertutup saat link diklik (opsional, tapi bagus)
+    // 2. Fungsi Tutup Menu saat Link diklik (VERSI OPTIMASI)
+    // Kita HAPUS "if (window.innerWidth <= 768)"
+    // Alasannya: Menghapus class 'active' di layar Desktop tidak akan merusak apa-apa.
+    // Jadi kita tidak perlu menyuruh browser menghitung lebar layar dulu (penyebab 41ms).
     function toggleMenu() {
-        if(window.innerWidth <= 768) {
-            navLinks.classList.remove('active');
-            mobileMenu.classList.remove('active'); // Reset ikon hamburger
-        }
+        navLinks.classList.remove('active');
+        mobileMenu.classList.remove('active');
     }
 </script>
 
