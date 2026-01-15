@@ -3,64 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog & Artikel | Coral Cafe Penida</title>
+    <title>Blog Wisata & Kuliner Nusa Penida | Tips Travel Coral Cafe</title>
     
+    <meta name="description" content="Panduan wisata Nusa Penida terbaru, tips travel, budaya lokal, dan cerita di balik dapur Coral Cafe. Baca artikel inspiratif kami sebelum berkunjung.">
+    <meta name="keywords" content="blog wisata bali, tips ke nusa penida, panduan travel penida, budaya bali, artikel kopi">
+    <link rel="canonical" href="https://coralcafepenida.com/blog.html">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+
+    <link rel="icon" type="image/x-icon" href="aset/favicon.ico">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "Coral Cafe Island Stories",
+      "url": "https://coralcafepenida.com/blog.html",
+      "description": "Inspirasi perjalanan, budaya lokal, dan cerita di balik dapur kami.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Coral Cafe Penida",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://coralcafepenida.com/aset/logo.png"
+        }
+      },
+      "blogPost": [
+        {
+          "@type": "BlogPosting",
+          "headline": "5 Spot Sunset Terbaik di Nusa Penida",
+          "datePublished": "2024-10-15",
+          "image": "https://images.unsplash.com/photo-1518548419970-58e3b4079ab2"
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "Mengenal Kopi Kintamani Bali",
+          "datePublished": "2024-10-10",
+          "image": "https://images.unsplash.com/photo-1497935586351-b67a49e012bf"
+        }
+      ]
+    }
+    </script>   
     <style>
-        /* --- 1. VARIABEL & RESET (Sama dengan Index) --- */
+        /* --- 1. VARIABEL & RESET (Disamakan dengan Index) --- */
         :root{
-            --bg-body:#F9F8F4; --bg-card:#FFFFFF;
-            --text-main:#2D3A31; --text-muted:#5C6B61;
-            --primary:#2D3A31; --accent:#8C9A84;
-            --highlight:#C27B66; --border:#E6E2DA;
+            --bg-body:#F9F8F4;
+            --bg-card:#FFFFFF;
+            --text-main:#2D3A31;
+            --text-muted:#5C6B61;
+            --primary:#2D3A31;
+            --accent:#8C9A84;
+            --highlight:#C27B66;
+            --border:#E6E2DA;
             --font-heading:'Playfair Display',serif;
             --font-body:'Source Sans 3',sans-serif;
-            --radius-card:24px; --radius-pill:999px;
+            --radius-card:24px;
+            --radius-pill:999px;
             --shadow-soft:0 10px 30px -5px rgba(45,58,49,0.05);
-            --transition:all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            --shadow-hover:0 20px 40px -10px rgba(45,58,49,0.15);
+            --transition:all 0.5s cubic-bezier(0.22,1,0.36,1);
         }
         
         *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
-        body { font-family:var(--font-body); color:var(--text-main); background-color:var(--bg-body); line-height:1.6; }
+        html{scroll-behavior:smooth}
+        body { font-family:var(--font-body); color:var(--text-main); background-color:var(--bg-body); line-height:1.7; overflow-x:hidden; position:relative; }
         a { text-decoration:none; color:inherit; transition:var(--transition); }
         img { max-width:100%; height:auto; display:block; }
+        ul { list-style:none; }
 
-        /* --- 2. NAVBAR (PERSIS SEPERTI INDEX.HTML) --- */
+        /* --- 2. NAVBAR (SAMA DENGAN INDEX) --- */
         .navbar {
             display:flex; justify-content:space-between; align-items:center;
             padding:20px 5%; 
-            /* Warna Background Navbar sesuai Index */
             background-color: rgba(249,248,244,0.95); 
-            backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
             position:sticky; top:0; z-index:1000;
             border-bottom:1px solid rgba(0,0,0,0.05);
+            transition:var(--transition);
         }
-        .logo { font-family:var(--font-heading); font-size:1.75rem; color:var(--primary); font-weight:700; }
+        .logo { font-family:var(--font-heading); font-size:1.75rem; color:var(--primary); font-weight:700; letter-spacing:-0.03em; }
         
-        .nav-links { display:flex; gap:40px; list-style:none; }
+        .nav-links { display:flex; gap:40px; }
         .nav-links a { font-weight:500; font-size:0.95rem; color:var(--text-main); position:relative; }
         .nav-links a::after { content:''; position:absolute; width:0; height:1px; bottom:-4px; left:0; background-color:var(--highlight); transition:width 0.3s; }
         .nav-links a:hover::after { width:100%; }
-        .nav-links a:hover, .nav-links a.active { color:var(--highlight); }
+        .nav-links a:hover { color:var(--highlight); }
 
         /* Mobile Menu Toggle */
-        .menu-toggle { display: none; flex-direction: column; gap: 6px; cursor: pointer; }
+        .menu-toggle { display: none; flex-direction: column; gap: 6px; cursor: pointer; z-index: 1001; background: none; border: none; }
         .bar { width:25px; height:2px; background:var(--text-main); transition:0.3s; }
         .menu-toggle.active .bar:nth-child(1) { transform: rotate(-45deg) translate(-5px, 6px); }
         .menu-toggle.active .bar:nth-child(2) { opacity: 0; }
         .menu-toggle.active .bar:nth-child(3) { transform: rotate(45deg) translate(-5px, -6px); }
 
-        /* --- 3. PAGE HEADER --- */
+        /* --- 3. PAGE HEADER (KHUSUS BLOG) --- */
         .page-header {
             text-align: center; padding: 80px 20px 40px;
         }
-        .page-header h1 { font-size: 3rem; color: var(--primary); margin-bottom: 10px; }
+        .page-header h1 { font-family: var(--font-heading); font-size: 3rem; color: var(--primary); margin-bottom: 10px; }
         .page-header p { color: var(--text-muted); max-width: 600px; margin: 0 auto; }
 
-        /* --- 4. BLOG GRID --- */
+        /* --- 4. BLOG GRID STYLES --- */
         .container { max-width: 1200px; margin: 0 auto; padding: 0 5%; }
         
         .blog-grid {
@@ -82,7 +127,7 @@
 
         .blog-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 40px -10px rgba(45,58,49,0.15);
+            box-shadow: var(--shadow-hover);
             border-color: var(--highlight);
         }
 
@@ -118,42 +163,105 @@
             text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.05em;
             display: inline-flex; align-items: center; gap: 5px;
         }
-        .read-more:hover { gap: 10px; } /* Animasi panah */
+        .read-more:hover { gap: 10px; }
 
-        /* --- FOOTER & FAB --- */
-        footer { background-color: var(--primary); color: #fff; padding: 60px 5% 30px; border-radius: 50px 50px 0 0; }
-        .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
-        .footer-col h3 { font-family: var(--font-heading); margin-bottom: 20px; color: var(--accent); }
-        .copyright { text-align: center; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; font-size: 0.9rem; opacity: 0.6; }
-
-        .fab-container { position: fixed; bottom: 30px; right: 30px; z-index: 990; display: flex; flex-direction: column; gap: 15px; }
-        .fab-btn {
-            width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
-            color: white; font-size: 1.4rem; box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: 0.3s;
+        /* --- 5. CTA SECTION (SAMA DENGAN INDEX) --- */
+        .cta-container { padding: 0 5%; margin-bottom: 80px; max-width: 1200px; margin-left: auto; margin-right: auto; }
+        .cta-section {
+            text-align: center; padding: 60px 20px; 
+            background-color: #F2EFE9; border-radius: 40px; 
+            border: 1px solid var(--border);
         }
-        /* Responsive */
+        .cta-section h2 { font-family:var(--font-heading); font-size: 2.5rem; margin-bottom: 15px; color: var(--primary); }
+        .cta-section p { margin-bottom: 30px; color: var(--text-muted); }
+        .cta-btn {
+            display: inline-block; padding: 14px 36px; 
+            background-color: #25D366; color: white; 
+            border-radius: var(--radius-pill); font-weight: 600; 
+            text-transform: uppercase; transition: var(--transition);
+        }
+        .cta-btn:hover { background-color: #1FAF53; transform: translateY(-2px); box-shadow: var(--shadow-soft); }
+
+        /* --- 6. FLOATING BUTTONS (SAMA DENGAN INDEX) --- */
+        #backToTopBtn {
+            display: none; position: fixed; bottom: 25px; right: 20px; z-index: 999;
+            border: none; outline: none; background-color: #2D3A31; color: white; cursor: pointer;
+            width: 50px; height: 50px; border-radius: 50%; font-size: 18px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3); transition: 0.3s;
+        }
+        #backToTopBtn:hover { background-color: #C27B66; transform: translateY(-5px); }
+        
+        .wa-float-container {
+            position: fixed; bottom: 90px; right: 20px; z-index: 999;
+            display: flex; flex-direction: column; align-items: flex-end; gap: 15px;
+        }
+        .wa-btn {
+            background-color: #25D366; color: white; width: 50px; height: 50px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center; text-decoration: none;
+            box-shadow: 2px 4px 12px rgba(0,0,0,0.3); font-size: 26px; position: relative;
+            transition: transform 0.3s; animation: pulse-wa 3s infinite;
+        }
+        .wa-btn:hover { transform: scale(1.1); animation: none; }
+        .wa-label {
+            position: absolute; right: 60px; background: #2D3A31; color: white;
+            padding: 6px 14px; border-radius: 50px; font-size: 13px; white-space: nowrap;
+            opacity: 0; visibility: hidden; transition: all 0.3s; pointer-events: none;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .wa-btn:hover .wa-label { opacity: 1; visibility: visible; right: 65px; }
+        @keyframes pulse-wa{0%{transform:scale(1)}50%{transform:scale(1.05)}100%{transform:scale(1)}}
+
+        /* --- 7. FOOTER (SAMA DENGAN INDEX) --- */
+        footer { background-color:var(--primary); color:#fff; padding:80px 5% 30px; border-radius:60px 60px 0 0; margin-top:40px; }
+        .footer-grid { display:grid; grid-template-columns:1.5fr 1fr 1fr 1fr; gap:60px; margin-bottom:60px; }
+        .footer-col h3 { font-family:var(--font-heading); font-size:1.4rem; margin-bottom:24px; color:var(--accent); }
+        .footer-col p { color:rgba(255,255,255,0.8); max-width:300px; line-height: 1.6; }
+        .footer-col ul li { margin-bottom:12px; display: flex; align-items: center; gap: 10px; }
+        .footer-col ul li i { color: var(--accent); width: 20px; }
+        .footer-col ul li a { color:rgba(255,255,255,0.8); font-size:0.95rem; transition: 0.3s; }
+        .footer-col ul li a:hover { color:#fff; padding-left:5px; }
+        .copyright { text-align:center; border-top:1px solid rgba(255,255,255,0.1); padding-top:30px; font-size:0.9rem; opacity:0.6; }
+
+        /* --- RESPONSIVE --- */
         @media (max-width: 900px) {
             .nav-links {
                 position: fixed; top: 0; right: -100%; width: 100%; height: 100vh;
                 background-color: var(--bg-body); flex-direction: column;
-                justify-content: center; align-items: center; transition: 0.4s; z-index: 99;
+                justify-content: center; align-items: center; transition: 0.4s ease-in-out; z-index: 1000;
             }
             .nav-links.active { right: 0; }
-            .menu-toggle { display: flex; z-index: 101; }
+            .nav-links a { font-size: 1.5rem; font-family: var(--font-heading); }
+            .menu-toggle { display: flex; }
+            
+            .footer-grid { grid-template-columns: 1fr; gap: 40px; }
             .page-header h1 { font-size: 2.2rem; }
+        }
+        @media (max-width:768px) {
+            .wa-label { display: none; }
         }
     </style>
 </head>
 <body>
 
+    <div class="wa-float-container">
+        <a href="https://wa.me/6281234567890?text=Halo%20Coral%20Cafe,%20saya%20ingin%20bertanya" target="_blank" class="wa-btn" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+            <span class="wa-label">Hubungi Kami</span>
+        </a>
+    </div>
+
+    <button onclick="topFunction()" id="backToTopBtn" title="Kembali ke atas" aria-label="Kembali ke atas">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
     <nav class="navbar">
         <div class="logo">CORAL CAFE.</div>
         
-<button class="menu-toggle" id="mobile-menu" aria-label="Buka Menu Navigasi">
-    <span class="bar"></span>
-    <span class="bar"></span>
-    <span class="bar"></span>
-</button>
+        <button class="menu-toggle" id="mobile-menu" aria-label="Buka Menu Navigasi">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
 
         <ul class="nav-links">
             <li><a href="index.html" onclick="toggleMenu()">Home</a></li>
@@ -166,7 +274,7 @@
 
 
     <header class="page-header">
-        <h1>Island Stories</h1>
+        <h1>Island Artikel</h1>
         <p>Inspirasi perjalanan, budaya lokal, dan cerita di balik dapur kami.</p>
     </header>
 
@@ -176,7 +284,7 @@
             <article class="blog-card">
                 <div class="blog-img-wrap">
                     <span class="blog-tag">Travel Guide</span>
-                    <img src="https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?w=500&q=80" alt="Nusa Penida" class="blog-img">
+                    <img src="aset/Sunset (1).webp" alt="Nusa Penida" class="blog-img">
                 </div>
                 <div class="blog-content">
                     <span class="blog-date">15 Oktober 2024</span>
@@ -189,7 +297,7 @@
             <article class="blog-card">
                 <div class="blog-img-wrap">
                     <span class="blog-tag">Coffee Culture</span>
-                    <img src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?w=500&q=80" alt="Kopi Bali" class="blog-img">
+                    <img src="aset/kopiasliBali..webp" alt="Kopi Bali" class="blog-img">
                 </div>
                 <div class="blog-content">
                     <span class="blog-date">10 Oktober 2024</span>
@@ -202,7 +310,7 @@
             <article class="blog-card">
                 <div class="blog-img-wrap">
                     <span class="blog-tag">Lifestyle</span>
-                    <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=500&q=80" alt="WFC Bali" class="blog-img">
+                    <img src="aset/WFCWorkFromCafe.webp" alt="WFC Bali" class="blog-img">
                 </div>
                 <div class="blog-content">
                     <span class="blog-date">28 September 2024</span>
@@ -215,7 +323,7 @@
             <article class="blog-card">
                 <div class="blog-img-wrap">
                     <span class="blog-tag">Kuliner</span>
-                    <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=500&q=80" alt="Makanan Sehat" class="blog-img">
+                    <img src="aset/SarapanTropicalBowl.webp" alt="Makanan Sehat" class="blog-img">
                 </div>
                 <div class="blog-content">
                     <span class="blog-date">12 September 2024</span>
@@ -228,7 +336,7 @@
             <article class="blog-card">
                 <div class="blog-img-wrap">
                     <span class="blog-tag">Budaya</span>
-                    <img src="https://images.unsplash.com/photo-1532186651327-6ac23687d078?w=500&q=80" alt="Upacara Bali" class="blog-img">
+                    <img src="aset/PemandanganlautbirudariCoralCafePenida.webp" alt="Upacara Bali" class="blog-img">
                 </div>
                 <div class="blog-content">
                     <span class="blog-date">05 September 2024</span>
@@ -241,7 +349,7 @@
             <article class="blog-card">
                 <div class="blog-img-wrap">
                     <span class="blog-tag">Tips Travel</span>
-                    <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=500&q=80" alt="Motoran di Nusa Penida" class="blog-img">
+                    <img src="aset/AmanBerkendaradiNusaPenida.webp" alt="Motoran di Nusa Penida" class="blog-img">
                 </div>
                 <div class="blog-content">
                     <span class="blog-date">20 Agustus 2024</span>
@@ -252,6 +360,15 @@
             </article>
 
         </div>
+        
+        <section class="cta-container">
+            <div class="cta-section">
+                <h2>Siap Menjelajahi Nusa Penida?</h2>
+                <p>Nikmati hidangan lezat setelah seharian berpetualang. Reservasi mejamu sekarang.</p>
+                <a href="https://wa.me/6281234567890" class="cta-btn">Reservasi via WhatsApp</a>
+            </div>
+        </section>
+        
     </main>
 
     <footer>
@@ -264,28 +381,28 @@
             <div class="footer-col">
                 <h3>Navigasi</h3>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="abot.html">Tentang Kami</a></li>
-                    <li><a href="peket.html">Menu</a></li>
-                    <li><a href="blog.html">Blog</a></li>
+                    <li><i class="fas fa-chevron-right"></i> <a href="index.html">Home</a></li>
+                    <li><i class="fas fa-chevron-right"></i> <a href="abot.html">Tentang Kami</a></li>
+                    <li><i class="fas fa-chevron-right"></i> <a href="peket.html">Menu</a></li>
+                    <li><i class="fas fa-chevron-right"></i> <a href="blog.html">Blog</a></li>
                 </ul>
             </div>
 
             <div class="footer-col">
                 <h3>Hubungi Kami</h3>
                 <ul>
-                    <li>📍 Jalan Raya Nusa Penida, Bali</li>
-                    <li>📞 <a href="tel:+6281234567890">+62 812 3456 7890</a></li>
-                    <li>✉️ <a href="mailto:hello@coralcafepenida.com">hello@coralcafepenida.com</a></li>
+                    <li><i class="fas fa-map-marker-alt"></i> Jalan Raya Nusa Penida, Bali</li>
+                    <li><i class="fas fa-phone"></i> <a href="tel:+6281234567890">+62 812 3456 7890</a></li>
+                    <li><i class="fas fa-envelope"></i> <a href="mailto:hello@coralcafepenida.com">hello@coralcafepenida.com</a></li>
                 </ul>
             </div>
             
             <div class="footer-col">
                 <h3>Ikuti Kami</h3>
                 <ul>
-                    <li><a href="#" aria-label="Instagram">Instagram</a></li>
-                    <li><a href="#" aria-label="TikTok">TikTok</a></li>
-                    <li><a href="#" aria-label="Facebook">Facebook</a></li>
+                    <li><i class="fab fa-instagram"></i> <a href="#" aria-label="Instagram">Instagram</a></li>
+                    <li><i class="fab fa-tiktok"></i> <a href="#" aria-label="TikTok">TikTok</a></li>
+                    <li><i class="fab fa-facebook"></i> <a href="#" aria-label="Facebook">Facebook</a></li>
                 </ul>
             </div>
         </div>
@@ -296,7 +413,7 @@
     </footer>
 
     <script>
-        // Script Toggle Menu Mobile (Sama dengan Index)
+        // --- Mobile Menu Logic ---
         const mobileMenu = document.getElementById('mobile-menu');
         const navLinks = document.querySelector('.nav-links');
 
@@ -304,6 +421,28 @@
             navLinks.classList.toggle('active');
             mobileMenu.classList.toggle('active');
         });
+
+        function toggleMenu() {
+            navLinks.classList.remove('active');
+            mobileMenu.classList.remove('active');
+        }
+
+        // --- Back To Top Logic ---
+        let mybutton = document.getElementById("backToTopBtn");
+        
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        function topFunction() {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
     </script>
 </body>
 </html>

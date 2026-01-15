@@ -3,68 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang Kami | Coral Cafe Penida - Cerita Rasa & Alam</title>
     
-    <title>About Us - Coral Cafe Penida | Tropical Vibes & Local Taste</title>
-    <meta name="description" content="Kenali lebih dekat Coral Cafe Penida. Cerita tentang kopi lokal Bali, bahan organik segar, dan dedikasi kami menyajikan kuliner terbaik dengan pemandangan Nusa Penida.">
-    <meta name="robots" content="index, follow">
-    <meta name="theme-color" content="#2D3A31">
-    
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://coralcafepenida.com/about.html">
-    <meta property="og:title" content="Tentang Coral Cafe Penida - Our Story">
-    <meta property="og:description" content="Tempat di mana rasa lokal bertemu pemandangan laut tropis.">
-    <meta property="og:image" content="aset/island-cafe-hero.webp">
+    <meta name="description" content="Mengenal Coral Cafe lebih dekat. Dedikasi pada bahan organik petani lokal, kopi artisan, dan pengalaman kuliner berkelanjutan di Nusa Penida.">
+    <meta name="keywords" content="tentang coral cafe, visi misi cafe, petani kopi bali, bahan organik, sustainability bali">
+    <link rel="canonical" href="https://coralcafepenida.com/abot.html">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
 
+    <link rel="icon" type="image/x-icon" href="aset/favicon.ico">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      "mainEntity": {
+        "@type": "Restaurant",
+        "name": "Coral Cafe Penida",
+        "description": "Tempat di mana rasa lokal bertemu pemandangan laut tropis.",
+        "foundingLocation": {
+            "@type": "Place",
+            "name": "Nusa Penida"
+        },
+        "slogan": "Tropical Vibes & Local Tastes"
+      }
+    }
+    </script>
     <style>
-        :root{--bg-body:#F9F8F4;--bg-card:#FFFFFF;--text-main:#2D3A31;--text-muted:#5C6B61;--primary:#2D3A31;--accent:#8C9A84;--highlight:#C27B66;--border:#E6E2DA;--font-heading:'Playfair Display',serif;--font-body:'Source Sans 3',sans-serif;--container-width:1200px;--section-padding:6rem 5%;--radius-card:24px;--radius-pill:999px;--shadow-soft:0 10px 30px -5px rgba(45,58,49,0.05);--shadow-hover:0 20px 40px -10px rgba(45,58,49,0.15);--transition:all 0.5s cubic-bezier(0.22,1,0.36,1)}
-        *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+        /* --- CSS VARIABLES & RESET (Sama dengan Index) --- */
+        :root{
+            --bg-body:#F9F8F4;
+            --bg-card:#FFFFFF;
+            --text-main:#2D3A31;
+            --text-muted:#5C6B61;
+            --primary:#2D3A31;
+            --accent:#8C9A84;
+            --highlight:#C27B66;
+            --border:#E6E2DA;
+            --font-heading:'Playfair Display',serif;
+            --font-body:'Source Sans 3',sans-serif;
+            --container-width:1200px;
+            --section-padding:6rem 5%;
+            --radius-card:24px;
+            --radius-pill:999px;
+            --shadow-soft:0 10px 30px -5px rgba(45,58,49,0.05);
+            --shadow-hover:0 20px 40px -10px rgba(45,58,49,0.15);
+            --transition:all 0.5s cubic-bezier(0.22,1,0.36,1);
+        }
+        *{margin:0;padding:0;box-sizing:border-box}
+        html{scroll-behavior:smooth}
         body{font-family:var(--font-body);color:var(--text-main);background-color:var(--bg-body);line-height:1.7;font-size:16px;overflow-x:hidden;position:relative}
         
         a{text-decoration:none;color:inherit;transition:var(--transition)}
         ul{list-style:none}
         img{max-width:100%;height:auto;display:block}
         h1,h2,h3,h4{font-family:var(--font-heading);font-weight:700;letter-spacing:-0.02em;line-height:1.2}
-        .italic-accent{font-style:italic;font-weight:400;color:var(--highlight)}
         
-        /* Buttons Styles */
+        /* Utility Classes */
+        .italic-accent{font-style:italic;font-weight:400;color:var(--highlight)}
+        section{padding:var(--section-padding)}
+        .container {max-width: var(--container-width); margin: 0 auto;}
+        
+        /* Buttons */
         .btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 36px;background-color:var(--primary);color:#fff;border-radius:var(--radius-pill);font-weight:600;font-size:0.9rem;letter-spacing:0.05em;text-transform:uppercase;transition:var(--transition);border:1px solid var(--primary);cursor:pointer; gap: 10px;}
         .btn:hover{background-color:var(--highlight);border-color:var(--highlight);transform:translateY(-2px);box-shadow:var(--shadow-soft)}
         .btn-outline{background-color:transparent;border:1px solid var(--text-main);color:var(--text-main);padding:14px 36px;border-radius:var(--radius-pill);font-weight:600;font-size:0.9rem;text-transform:uppercase;letter-spacing:0.05em;display:inline-flex;align-items:center;justify-content:center;}
         .btn-outline:hover{border-color:var(--primary);color:var(--primary);background-color:rgba(140,154,132,0.1)}
 
-        /* Navbar Style */
+        /* --- NAVBAR (Disamakan dengan Index) --- */
         .navbar{display:flex;justify-content:space-between;align-items:center;padding:20px 5%;background-color:rgba(249,248,244,0.95);position:sticky;top:0;z-index:1000;border-bottom:1px solid rgba(0,0,0,0.05);transition:var(--transition)}
-        .logo{font-family:var(--font-heading);font-size:1.5rem;color:var(--primary);font-weight:bold;letter-spacing:-0.03em}
-        .nav-links{display:flex;gap:30px}
-        .nav-links a{font-weight:500;font-size:0.95rem;color:var(--text-main);position:relative; transition: color 0.3s;}
+        .logo{font-family:var(--font-heading);font-size:1.75rem;color:var(--primary);font-weight:700;letter-spacing:-0.03em}
+        .nav-links{display:flex;gap:40px}
+        .nav-links a{font-weight:500;font-size:0.95rem;color:var(--text-main);position:relative}
         .nav-links a::after{content:'';position:absolute;width:0;height:1px;bottom:-4px;left:0;background-color:var(--highlight);transition:width 0.3s}
         .nav-links a:hover::after{width:100%}
-        .nav-links a:hover, .nav-links a.active{color:var(--highlight)}
+        .nav-links a:hover{color:var(--highlight)}
 
-        /* Hamburger Menu */
-        .menu-toggle {display: none; flex-direction: column; gap: 6px; cursor: pointer;}
+        /* Menu Toggle (Mobile) */
+        .menu-toggle {display: none; flex-direction: column; gap: 6px; cursor: pointer; z-index: 1001;}
+        .bar{width:25px;height:2px;background:var(--text-main);transition:0.3s}
         .menu-toggle.active .bar:nth-child(1) {transform: rotate(-45deg) translate(-5px, 6px);}
         .menu-toggle.active .bar:nth-child(2) {opacity: 0;}
         .menu-toggle.active .bar:nth-child(3) {transform: rotate(45deg) translate(-5px, -6px);}
-        .bar{width:25px;height:2px;background:var(--text-main);transition:0.3s}
 
-        /* Hero */
+        /* --- HERO ABOUT --- */
         .hero-page{position:relative;height:60vh;min-height:400px;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;padding:0 20px;overflow:hidden;border-radius:0 0 60px 60px}
         .hero-bg{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:1;filter:brightness(0.7)}
-        
-        /* Layout Utilities */
-        section{padding:var(--section-padding)}
-        .container {max-width: var(--container-width); margin: 0 auto;}
-        
+        .hero-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(45,58,49,0.5);z-index:2}
+        .hero-content{position:relative;z-index:3;animation:fadeUp 1s ease-out forwards}
+
+        /* --- SECTIONS --- */
         .section-title{text-align:center;margin-bottom:70px;max-width:700px;margin-left:auto;margin-right:auto}
         .section-title h2{font-size:3rem;color:var(--primary);margin-bottom:16px}
         .section-title p{color:var(--text-muted);font-size:1.1rem}
 
-        /* Content Grid */
+        /* About Grid */
         .about-content{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
         .about-img{position:relative}
         .about-img img{width:100%;border-radius:200px 200px 20px 20px;box-shadow:var(--shadow-soft);transition:transform 0.7s ease}
@@ -79,58 +115,102 @@
         .value-icon {font-size: 2.5rem; color: var(--highlight); margin-bottom: 20px;}
         .value-card h3 {margin-bottom: 15px; font-size: 1.5rem;}
         
-        /* CTA Section */
-        .cta-section {
-            background-color: rgba(140, 154, 132, 0.1);
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
-            text-align: center;
-        }
-        .cta-wrapper {max-width: 800px; margin: 0 auto;}
-        .cta-buttons {display: flex; justify-content: center; gap: 20px; margin-top: 40px; flex-wrap: wrap;}
+        /* CTA Section (Disamakan dengan Index) */
+        .cta-container {padding: 0 5%; margin-bottom: 40px;}
+        .cta-section {text-align: center; padding: 60px 20px; background-color: #F2EFE9; border-radius: 40px; border: 1px solid var(--border);}
+        .cta-section h2 {font-size: 2.5rem; margin-bottom: 15px; color: var(--primary);}
+        .cta-section p {margin-bottom: 30px; color: var(--text-muted);}
+        .cta-btn {display: inline-block; padding: 14px 36px; background-color: #25D366; color: white; border-radius: var(--radius-pill); font-weight: 600; text-transform: uppercase; transition: var(--transition);}
+        .cta-btn:hover {background-color: #1FAF53; transform: translateY(-2px); box-shadow: var(--shadow-soft);}
 
-        /* Footer */
+        /* --- FOOTER (Disamakan dengan Index) --- */
         footer{background-color:var(--primary);color:#fff;padding:80px 5% 30px;border-radius:60px 60px 0 0;margin-top:40px}
         .footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:60px;margin-bottom:60px}
-        .footer-col h4{font-family:var(--font-heading);font-size:1.4rem;margin-bottom:24px;color:var(--accent)} /* Pake h4 biar mirip index */
-        .footer-col p{color:rgba(255,255,255,0.8);max-width:300px}
-        .footer-col ul li{margin-bottom:12px}
+        .footer-col h3{font-family:var(--font-heading);font-size:1.4rem;margin-bottom:24px;color:var(--accent)}
+        .footer-col p{color:rgba(255,255,255,0.8);max-width:300px; line-height: 1.6;}
+        .footer-col ul li{margin-bottom:12px; display: flex; align-items: center; gap: 10px;}
+        .footer-col ul li i {color: var(--accent); width: 20px;}
         .footer-col ul li a{color:rgba(255,255,255,0.8);font-size:0.95rem}
         .footer-col ul li a:hover{color:#fff;padding-left:5px}
         .copyright{text-align:center;border-top:1px solid rgba(255,255,255,0.1);padding-top:30px;font-size:0.9rem;opacity:0.6;font-family:var(--font-body)}
 
-        @keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+        /* --- FLOATING BUTTONS (WA & TOP) --- */
+        #backToTopBtn {
+            display: none; position: fixed; bottom: 25px; right: 20px; z-index: 999;
+            border: none; outline: none; background-color: #2D3A31; color: white; cursor: pointer;
+            width: 50px; height: 50px; border-radius: 50%; font-size: 18px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3); transition: 0.3s;
+            -webkit-tap-highlight-color: transparent;
+        }
+        #backToTopBtn:hover {background-color: #C27B66; transform: translateY(-5px);}
         
-        /* Responsive */
+        .wa-float-container {
+            position: fixed; bottom: 90px; right: 20px; z-index: 999;
+            display: flex; flex-direction: column; align-items: flex-end; gap: 15px;
+        }
+        .wa-btn {
+            background-color: #25D366; color: white; width: 50px; height: 50px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center; text-decoration: none;
+            box-shadow: 2px 4px 12px rgba(0,0,0,0.3); font-size: 26px; position: relative;
+            transition: transform 0.3s; -webkit-tap-highlight-color: transparent;
+            animation: pulse-wa 3s infinite;
+        }
+        .wa-btn:hover {transform: scale(1.1); animation: none;}
+        .wa-label {
+            position: absolute; right: 60px; background: #2D3A31; color: white;
+            padding: 6px 14px; border-radius: 50px; font-size: 13px; white-space: nowrap;
+            opacity: 0; visibility: hidden; transition: all 0.3s; pointer-events: none;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .wa-btn:hover .wa-label {opacity: 1; visibility: visible; right: 65px;}
+        
+        @keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+        @keyframes pulse-wa{0%{transform:scale(1)}50%{transform:scale(1.05)}100%{transform:scale(1)}}
+
+        /* --- RESPONSIVE MEDIA QUERIES --- */
         @media (max-width:900px){
-            .navbar {flex-direction: column; gap: 15px;}
+            .hero h1{font-size:3rem}
             .about-content{grid-template-columns:1fr;gap:40px}
-            .about-img{order: -1;}
+            /* Fix: Image order on mobile so text comes first usually, or img first */
+            .about-img img{border-radius:20px;aspect-ratio:4/3;object-fit:cover}
             .footer-grid{grid-template-columns:1fr;gap:40px}
-            .menu-toggle{display:flex;z-index:1001; position: absolute; right: 20px; top: 25px;} /* Fix posisi toggle hamburger */
-            .navbar{align-items: flex-start;} /* Logo di kiri */
+            
+            .menu-toggle{display:flex;}
             .nav-links{position:fixed;top:0;right:-100%;width:100%;height:100vh;background-color:var(--bg-body);flex-direction:column;justify-content:center;align-items:center;transition:0.4s ease-in-out;z-index:1000}
             .nav-links.active{right:0}
             .nav-links a{font-size:1.5rem;font-family:var(--font-heading)}
-            .cta-buttons { flex-direction: column; width: 100%; }
-            .cta-buttons .btn, .cta-buttons .btn-outline { width: 100%; }
+        }
+        @media (max-width:768px) {
+            .wa-label { display: none; }
+            .wa-btn, #backToTopBtn { width: 45px; height: 45px; font-size: 22px; }
         }
     </style>
 </head>
 <body>
 
+<div class="wa-float-container">
+    <a href="https://wa.me/6281234567890?text=Halo%20Coral%20Cafe,%20saya%20ingin%20bertanya" target="_blank" class="wa-btn" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+        <span class="wa-label">Hubungi Kami</span>
+    </a>
+</div>
+
+<button onclick="topFunction()" id="backToTopBtn" title="Kembali ke atas" aria-label="Kembali ke atas">
+    <i class="fas fa-arrow-up"></i>
+</button>
+
     <nav class="navbar">
         <div class="logo">CORAL CAFE.</div>
         
-<button class="menu-toggle" id="mobile-menu" aria-label="Buka Menu Navigasi">
-    <span class="bar"></span>
-    <span class="bar"></span>
-    <span class="bar"></span>
-</button>
+        <button class="menu-toggle" id="mobile-menu" aria-label="Buka Menu Navigasi">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
 
         <ul class="nav-links">
             <li><a href="index.html" onclick="toggleMenu()">Home</a></li>
-            <li><a href="abot.html" onclick="toggleMenu()">About</a></li>
+            <li><a href="abot.html" onclick="toggleMenu()" style="color:var(--highlight)">About</a></li>
             <li><a href="peket.html" onclick="toggleMenu()">Menu</a></li>
             <li><a href="galeri.html" onclick="toggleMenu()">Galeri</a></li>
             <li><a href="blog.html" onclick="toggleMenu()">Blog</a></li>
@@ -138,9 +218,9 @@
     </nav>
 
     <header class="hero-page">
-        <img src="aset/island-cafe-hero.webp" alt="Pemandangan Interior Coral Cafe Nusa Penida dengan View Laut Biru Bali" class="hero-bg">
-        <div class="hero-overlay" style="position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(45,58,49,0.5);z-index:2"></div>
-        <div class="hero-content" style="position:relative;z-index:3;animation:fadeUp 1s ease-out forwards">
+        <img src="aset/island cafe on the seafront.webp" alt="Pemandangan Interior Coral Cafe Nusa Penida" class="hero-bg">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
             <h1>Tentang Kami</h1>
             <p class="italic-accent">Sebuah dedikasi untuk rasa, alam, dan ketenangan.</p>
         </div>
@@ -161,7 +241,7 @@
                         </p>
                     </div>
                     <div class="about-img">
-                        <img src="aset/story-image.webp" alt="Barista Profesional Coral Cafe sedang Menyeduh Kopi Manual Brew Khas Bali" width="600" height="800">
+                        <img src="aset/Pemandangan.webp" alt="Barista Profesional Coral Cafe" width="600" height="800">
                     </div>
                 </div>
             </div>
@@ -196,21 +276,11 @@
             </div>
         </section>
 
-        <section class="cta-section">
-            <div class="cta-wrapper">
-                <h2 style="font-size: 2.5rem; color: var(--primary); margin-bottom: 1rem;">Siap Mencicipi Kopi Terbaik?</h2>
-                <p class="italic-accent" style="font-size: 1.2rem;">"Pesan sekarang atau kunjungi ruang baca kami."</p>
-                
-                <div class="cta-buttons">
-                    <a href="https://wa.me/6281234567890" class="btn" aria-label="Pesan via WhatsApp">
-                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.969.591 1.974.969 3.03.969 3.412 0 6.188-2.581 6.189-5.766.001-3.186-2.557-5.766-5.766-5.766zm-3.151 7.922c-.148.249-.249.373-.349.398-.099.025-.596.149-1.29-.547-.694-.695-.572-1.192-.472-1.391.099-.199.199-.372.497-.745.298-.373.248-.596.149-.795-.099-.198-.596-1.589-.794-2.135-.199-.547-.397-.472-.546-.472-.149 0-.447 0-.745.298-.298.298-1.042.992-1.042 2.383 0 1.391 1.092 2.808 1.34 3.106.248.298 2.183 3.056 5.061 4.198 2.879 1.143 2.879.77 3.425.695.546-.075 1.737-.696 1.985-1.391.248-.695.248-1.291.174-1.391-.074-.099-.273-.149-.571-.298-.298-.149-1.738-.844-2.011-.943-.273-.099-.472-.149-.67.149-.199.298-.769.943-.943 1.142-.174.199-.348.224-.646.075z"/></svg>
-                        Pesan via WhatsApp
-                    </a>
-                    
-                    <a href="https://maps.google.com/?q=Nusa+Penida" target="_blank" class="btn-outline" aria-label="Lihat Lokasi di Google Maps">
-                        Lokasi Kami
-                    </a>
-                </div>
+        <section class="cta-container">
+            <div class="cta-section">
+                <h2>Ingin Merasakan Suasananya?</h2>
+                <p>Datang dan nikmati kopi terbaik dengan pemandangan laut yang menakjubkan.</p>
+                <a href="https://wa.me/6281234567890" class="cta-btn">Reservasi via WhatsApp</a>
             </div>
         </section>
     </main>
@@ -225,28 +295,28 @@
             <div class="footer-col">
                 <h3>Navigasi</h3>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="abot.html">Tentang Kami</a></li>
-                    <li><a href="peket.html">Menu</a></li>
-                    <li><a href="blog.html">Blog</a></li>
+                    <li><i class="fas fa-chevron-right"></i> <a href="index.html">Home</a></li>
+                    <li><i class="fas fa-chevron-right"></i> <a href="abot.html">Tentang Kami</a></li>
+                    <li><i class="fas fa-chevron-right"></i> <a href="peket.html">Menu</a></li>
+                    <li><i class="fas fa-chevron-right"></i> <a href="blog.html">Blog</a></li>
                 </ul>
             </div>
 
             <div class="footer-col">
                 <h3>Hubungi Kami</h3>
                 <ul>
-                    <li>📍 Jalan Raya Nusa Penida, Bali</li>
-                    <li>📞 <a href="tel:+6281234567890">+62 812 3456 7890</a></li>
-                    <li>✉️ <a href="mailto:hello@coralcafepenida.com">hello@coralcafepenida.com</a></li>
+                    <li><i class="fas fa-map-marker-alt"></i> Jalan Raya Nusa Penida, Bali</li>
+                    <li><i class="fas fa-phone"></i> <a href="tel:+6281234567890">+62 812 3456 7890</a></li>
+                    <li><i class="fas fa-envelope"></i> <a href="mailto:hello@coralcafepenida.com">hello@coralcafepenida.com</a></li>
                 </ul>
             </div>
             
             <div class="footer-col">
                 <h3>Ikuti Kami</h3>
                 <ul>
-                    <li><a href="#" aria-label="Instagram">Instagram</a></li>
-                    <li><a href="#" aria-label="TikTok">TikTok</a></li>
-                    <li><a href="#" aria-label="Facebook">Facebook</a></li>
+                    <li><i class="fab fa-instagram"></i> <a href="#" aria-label="Instagram">Instagram</a></li>
+                    <li><i class="fab fa-tiktok"></i> <a href="#" aria-label="TikTok">TikTok</a></li>
+                    <li><i class="fab fa-facebook"></i> <a href="#" aria-label="Facebook">Facebook</a></li>
                 </ul>
             </div>
         </div>
@@ -256,23 +326,38 @@
         </div>
     </footer>
 
+<script>
+    // --- Mobile Menu Logic ---
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navLinks = document.querySelector('.nav-links');
 
-    <script>
-        const mobileMenu = document.getElementById('mobile-menu');
-        const navLinks = document.querySelector('.nav-links');
+    mobileMenu.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        mobileMenu.classList.toggle('active');
+    });
 
-        mobileMenu.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            mobileMenu.classList.toggle('active');
-        });
+    function toggleMenu() {
+        navLinks.classList.remove('active');
+        mobileMenu.classList.remove('active');
+    }
 
-        navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                mobileMenu.classList.remove('active');
-            });
-        });
-    </script>
+    // --- Back To Top Logic ---
+    let mybutton = document.getElementById("backToTopBtn");
+    
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+    }
+
+    function topFunction() {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    }
+</script>
 
 </body>
 </html>
