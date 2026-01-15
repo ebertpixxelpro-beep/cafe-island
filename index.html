@@ -20,7 +20,10 @@
     
     <link rel="preload" as="image" href="aset/islandcafeontheseafront (1).webp" fetchpriority="high">
 
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" media="print" onload="this.media='all'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+    </noscript>
     
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌴</text></svg>">
 
@@ -53,7 +56,7 @@
     </script>
 
     <style>
-        /* --- CSS VARIABLES & RESET (Optimized) --- */
+        /* --- CSS VARIABLES --- */
         :root{
             --bg-body:#F9F8F4;
             --bg-card:#FFFFFF;
@@ -63,13 +66,15 @@
             --accent:#8C9A84;
             --highlight:#C27B66;
             --border:#E6E2DA;
+            /* Green Color darkened slightly for Accessibility Score 100 */
+            --green-wa: #1E8E3E; 
             --font-heading:'Playfair Display',serif;
             --font-body:'Source Sans 3',sans-serif;
             --radius-card:24px;
             --radius-pill:999px;
             --shadow-soft:0 10px 30px -5px rgba(45,58,49,0.05);
             --shadow-hover:0 20px 40px -10px rgba(45,58,49,0.15);
-            --transition:all 0.5s cubic-bezier(0.22,1,0.36,1);
+            --transition:all 0.4s cubic-bezier(0.22,1,0.36,1);
         }
         *{margin:0;padding:0;box-sizing:border-box}
         html{scroll-behavior:smooth}
@@ -89,8 +94,10 @@
         /* Buttons */
         .btn{display:inline-flex;align-items:center;padding:14px 36px;background-color:var(--primary);color:#fff;border-radius:var(--radius-pill);font-weight:600;font-size:0.9rem;letter-spacing:0.05em;text-transform:uppercase;transition:var(--transition);border:1px solid var(--primary);cursor:pointer}
         .btn:hover{background-color:var(--highlight);border-color:var(--highlight);transform:translateY(-2px);box-shadow:var(--shadow-soft)}
+        
         .btn-outline{background-color:transparent;border:1px solid var(--text-main);color:var(--text-main);padding:14px 36px;border-radius:var(--radius-pill);font-weight:600;font-size:0.9rem;text-transform:uppercase;letter-spacing:0.05em;display:inline-block}
         .btn-outline:hover{border-color:var(--primary);color:var(--primary);background-color:rgba(140,154,132,0.1)}
+        
         .center-btn{text-align:center;margin-top:60px}
 
         /* --- NAVBAR --- */
@@ -110,7 +117,20 @@
         .menu-toggle.active .bar:nth-child(3) {transform: rotate(45deg) translate(-5px, -6px);}
 
         /* --- HERO SECTION --- */
-        .hero{position:relative;height:90vh;min-height:600px;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;padding:0 20px;overflow:hidden;border-radius:0 0 60px 60px}
+        /* Default Desktop */
+        .hero{
+            position:relative;
+            height:90vh;
+            min-height:600px;
+            display:flex;
+            align-items:center; /* Vertically center on desktop */
+            justify-content:center;
+            text-align:center;
+            color:#fff;
+            padding:0 20px;
+            overflow:hidden;
+            border-radius:0 0 60px 60px
+        }
         .hero-bg{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:1;filter:brightness(0.85) saturate(1.1)}
         .hero-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(to bottom,rgba(45,58,49,0.3),rgba(45,58,49,0.6));z-index:2}
         .hero-content{position:relative;z-index:3;max-width:900px;opacity:0;animation:fadeUp 1s ease-out forwards 0.3s}
@@ -164,8 +184,9 @@
         .cta-section {text-align: center; padding: 60px 20px; background-color: #F2EFE9; border-radius: 40px; border: 1px solid var(--border);}
         .cta-section h2 {font-size: 2.5rem; margin-bottom: 15px; color: var(--primary);}
         .cta-section p {margin-bottom: 30px; color: var(--text-muted);}
-        .cta-btn {display: inline-block; padding: 14px 36px; background-color: #25D366; color: white; border-radius: var(--radius-pill); font-weight: 600; text-transform: uppercase; transition: var(--transition);}
-        .cta-btn:hover {background-color: #1FAF53; transform: translateY(-2px); box-shadow: var(--shadow-soft);}
+        /* Warna dipergelap sedikit untuk Lulus Uji Kontras (Accessibility Score) */
+        .cta-btn {display: inline-block; padding: 14px 36px; background-color: var(--green-wa); color: white; border-radius: var(--radius-pill); font-weight: 600; text-transform: uppercase; transition: var(--transition);}
+        .cta-btn:hover {background-color: #166e30; transform: translateY(-2px); box-shadow: var(--shadow-soft);}
 
         /* --- FOOTER --- */
         footer{background-color:var(--primary);color:#fff;padding:80px 5% 30px;border-radius:60px 60px 0 0;margin-top:40px}
@@ -185,8 +206,7 @@
             width: 50px; height: 50px; border-radius: 50%; 
             box-shadow: 0 4px 15px rgba(0,0,0,0.3); transition: 0.3s;
             -webkit-tap-highlight-color: transparent;
-            /* Center icon manually */
-            display: none; align-items: center; justify-content: center;
+            align-items: center; justify-content: center;
         }
         #backToTopBtn:hover {background-color: #C27B66; transform: translateY(-5px);}
         
@@ -195,7 +215,7 @@
             display: flex; flex-direction: column; align-items: flex-end; gap: 15px;
         }
         .wa-btn {
-            background-color: #25D366; color: white; width: 50px; height: 50px; border-radius: 50%;
+            background-color: var(--green-wa); color: white; width: 50px; height: 50px; border-radius: 50%;
             display: flex; align-items: center; justify-content: center; text-decoration: none;
             box-shadow: 2px 4px 12px rgba(0,0,0,0.3); font-size: 26px; position: relative;
             transition: transform 0.3s; -webkit-tap-highlight-color: transparent;
@@ -218,8 +238,17 @@
             .paket-card:nth-child(2){transform:translateY(40px)}
             .paket-card:nth-child(2):hover{transform:translateY(30px)}
         }
+        
         @media (max-width:900px){
-            .hero h1{font-size:3rem}
+            /* PERBAIKAN: Posisi Text Hero Naik ke Atas */
+            .hero {
+                align-items: flex-start; /* Meratakan ke atas, bukan tengah */
+                padding-top: 150px; /* Jarak dari atas (Navbar) */
+                height: auto;
+                min-height: 80vh; /* Sedikit lebih tinggi agar background terlihat penuh */
+            }
+            .hero h1{font-size:3rem; margin-top: 0;}
+            
             .about-content{grid-template-columns:1fr;gap:40px}
             .about-img img{border-radius:20px;aspect-ratio:4/3;object-fit:cover}
             .footer-grid{grid-template-columns:1fr;gap:40px}
@@ -230,15 +259,19 @@
             .nav-links.active{right:0}
             .nav-links a{font-size:1.5rem;font-family:var(--font-heading)}
         }
+        
         @media (max-width:768px) {
             .wa-label { display: none; }
             .wa-btn, #backToTopBtn { width: 45px; height: 45px; }
             .icon-lg { width: 20px; height: 20px; }
         }
+        
         @media (max-width:480px){
             .hero h1{font-size:2.5rem}
             .section-title h2{font-size:2.2rem}
             .paket-card:nth-child(2){transform:none}
+            /* Extra adjustment untuk layar sangat kecil */
+            .hero { padding-top: 130px; } 
         }
     </style>
 </head>
@@ -471,7 +504,7 @@
 
     function scrollFunction() {
         if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-            mybutton.style.display = "flex"; // Changed from block to flex for centering
+            mybutton.style.display = "flex";
         } else {
             mybutton.style.display = "none";
         }
